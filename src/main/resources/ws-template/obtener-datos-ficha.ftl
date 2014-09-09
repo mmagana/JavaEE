@@ -1,0 +1,24 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:obt="http://osb.bancochile.cl/RenovacionInternet/ObtenerDatosFichaChica/" xmlns:head="http://osb.bancochile.cl/common/HeaderRequest" xmlns:opob="http://osb.bancochile.cl/ESB/RenovacionInternet/ObtenerDatosFichaChica/OpObtenerRequest">
+   <soapenv:Header>
+      <obt:headerRequest>
+         <head:consumidor>
+            <head:idApp>${idApp}</head:idApp>
+            <head:usuario>${usuario}</head:usuario>
+         </head:consumidor>
+         <head:transaccion>
+            <head:idTransaccionNegocio>${idTransaccionNegocio}</head:idTransaccionNegocio>
+            <head:fechaHora>${fechaHora}</head:fechaHora>
+            <head:canal>${canal}</head:canal>
+         </head:transaccion>
+      </obt:headerRequest>
+   </soapenv:Header>
+   <soapenv:Body>
+      <obt:ObtenerRequest>
+         <reqObtener>
+            <opob:Cuerpo>
+               <opob:rutCliente>${rutClient}</opob:rutCliente>
+            </opob:Cuerpo>
+         </reqObtener>
+      </obt:ObtenerRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,31 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://osb.bancochile.cl/RenovacionInternet/ConsultarCuenta/" xmlns:head="http://osb.bancochile.cl/common/HeaderRequest" xmlns:opc="http://osb.bancochile.cl/ESB/RenovacionInternet/ConsultarCuenta/OpConsultarCuentaRequest">
+   <soapenv:Header>
+      <obt:headerRequest>
+         <head:consumidor>
+            <head:idApp>${idApp}</head:idApp>
+            <head:usuario>${usuario}</head:usuario>
+         </head:consumidor>
+         <head:transaccion>
+            <head:idTransaccionNegocio>${idTransaccionNegocio}</head:idTransaccionNegocio>
+            <head:fechaHora>${fechaHora}</head:fechaHora>
+            <head:canal>${canal}</head:canal>
+         </head:transaccion>
+      </obt:headerRequest>
+   </soapenv:Header>
+   <soapenv:Body>
+      <con:ConsultarCuenta>
+         <reqConsultarCuenta>
+            <opc:Cuerpo>
+               <opc:ListaCuentas>
+               	<#list cuentas as cuenta>
+                  <opc:Cuentas>
+                     <opc:codProducto>${cuenta.codigoProducto}</opc:codProducto>
+                     <opc:nroProducto>${cuenta.numeroProducto}</opc:nroProducto>
+                  </opc:Cuentas>  
+                  </#list>            
+               </opc:ListaCuentas>
+            </opc:Cuerpo>
+         </reqConsultarCuenta>
+      </con:ConsultarCuenta>
+   </soapenv:Body>
+</soapenv:Envelope>
