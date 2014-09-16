@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.1-hudson-28-. --><xs:schema xmlns:tns="http://ws.wscalculadora.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.wscalculadora.com/">
+
+<xs:element name="sumar" type="tns:sumar" />
+
+<xs:element name="sumarResponse" type="tns:sumarResponse" />
+
+<xs:complexType name="sumar">
+<xs:sequence>
+<xs:element name="num1" type="xs:int" />
+<xs:element name="num2" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sumarResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
