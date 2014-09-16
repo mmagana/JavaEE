@@ -1,11 +1,18 @@
-package cl.bancochille.ws.model;
+package cl.bancochile.ws.client.generic.model;
 
-public class Cuenta {
+import java.io.Serializable;
+
+public class Cuenta implements Serializable {
 
 	private String codigoProducto;
 	private String numeroProducto;
 	
 	public Cuenta(String codigoProducto, String numeroProducto){
+		this.codigoProducto = codigoProducto;
+		this.numeroProducto = numeroProducto;
+	}
+	
+	public Cuenta(){
 		this.codigoProducto = codigoProducto;
 		this.numeroProducto = numeroProducto;
 	}

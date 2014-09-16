@@ -1,4 +1,4 @@
-package cl.bancochile.util;
+package cl.bancochile.ws.client.generic.util;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
